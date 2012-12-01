@@ -19,6 +19,9 @@ Webapp::Application.routes.draw do
   match 'about-the-hosts' => 'site#about_the_hosts'
   match 'archive' => 'posts#index'
   match 'archive/:url' => 'posts#view'
+  match 'podlogin' => 'site#login'
+  match 'logout' => 'site#logout'
+  match 'admin' => 'site#admin'
   
   resources :posts
   # Sample resource route with options:

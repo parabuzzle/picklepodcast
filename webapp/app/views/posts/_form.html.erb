@@ -12,6 +12,29 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+	<table>
+		<tr>
+			<td>Title:</td>
+			<td><%=f.text_field(:title)%></td>
+		<tr>
+		<tr>
+			<td>URL:</td>
+			<td><%=f.text_field(:url)%></td>
+		<tr>
+		<tr>
+			<td>Body:</td>
+			<td><%=f.text_area(:body)%></td>
+		<tr>	
+		<tr>
+			<td>mp3 url:</td>
+			<td><%=f.text_field(:mp3)%></td>
+		<tr>
+		<tr>
+			<td>Status</td>
+			<td>dropdown</td>
+		<tr>
+    		<td colspan=2><%= f.submit %></td>
+		</tr>
+	</table>
   </div>
 <% end %>

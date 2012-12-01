@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Webapp</title>
+  <title>The Electric Pickle Podcast :: <%=@title%></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%if flash[:error]%>
+	<div id="error">
+		<%=flash[:error]%>
+	</div>
+	<%end%>
 	<div id="container">
 		<div id="logo"><%=image_tag('topline.jpg')%></div>
 		<div id="links">
-			LATEST EPISODE | ABOUT THE SHOW | ABOUT THE HOSTS | PAST EPISODES
+			<%=link_to("LATEST EPISODE", "/")%> | 
+			<%=link_to("ABOUT THE SHOW", :controller=>:site, :action=>:about_the_show)%> | 
+			<%=link_to("ABOUT THE HOSTS", :controller=>:site, :action=>:about_the_hosts)%> | 
+			<%=link_to("PAST EPISODES", "/archive")%>
+			<%if logged_in?%>
+			 | <%=link_to("admin", :controller=>:site, :action=>:admin)%>
+			<%end%>
 			<div id="tag">:: a new episode every sunday afternoon ::</div>
 		</div>
 		<div id="main">
@@ -32,6 +43,7 @@
 			<div class="clear"></div>
 		</div>
 		<div id="footer">
+			submissions &lt;at&gt; electricpicklepodcast.com<br/> 
 			Copyright &copy; <%=Time.now.year%> Electric Pickle Podcast<br/>
 			all music is presented for promotional use only and is the property of its respective copyright owner(s).
 		</div>

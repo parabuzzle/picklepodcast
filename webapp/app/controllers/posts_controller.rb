@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
+  
+  before_filter :logged_in, :except => [:index, :view]
+  
   def index
-    @posts = Post.all
+    @title = "Archive"
+    @posts = Post.all.reverse
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
+    @title = @post.title
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @post }
@@ -23,6 +27,7 @@ class PostsController < ApplicationController
   
   def view
     @post = Post.find_by_url(params[:url])
+    @title = @post.title
     respond_to do |format|
       format.html
       format.json { render :json => @post}
@@ -32,6 +37,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
+    @title = "Create New Post"
     @post = Post.new
 
     respond_to do |format|
@@ -43,13 +49,14 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @title = "edit - #{@post.title}"
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    @title = "Create New Post"
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, :notice => 'Post was successfully created.' }
@@ -65,7 +72,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-
+    @title = "EDIT"
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to @post, :notice => 'Post was successfully updated.' }
@@ -82,6 +89,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    @title = "Kill Post"
 
     respond_to do |format|
       format.html { redirect_to posts_url }

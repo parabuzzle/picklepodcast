@@ -30,7 +30,7 @@ a {
 
 a:hover {
 	text-decoration:underline;
-}
+}	
 
 #container {
 	width: 960px;
@@ -46,7 +46,7 @@ a:hover {
 	background-repeat:repeat;
 	min-height:300px;
 	_height:300px;
-	padding:5px;
+	padding:10px;
 }
 #links {
 	text-align:center;
@@ -72,9 +72,17 @@ a:hover {
 #footer {
 	margin-top:20px;
 	border-top:2px solid #fff;
-	padding:20px;
+	padding:10px;
 	text-align:center;
 	font-size: 12px;
+}
+
+#error {
+	background:red;
+	padding:20px;
+	color:yellow;
+	font-weight:bold;
+	font-size:20px;
 }
 
 .twitter {
