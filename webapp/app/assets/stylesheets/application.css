@@ -116,3 +116,26 @@ a:hover {
 .pad5 {
 	padding:5px;
 }
+.center {
+	margin:auto;
+	text-align:center;
+}
+
+#ie-tape {
+	margin:auto;
+	text-align:center;
+	background:#333;
+	width:493px;
+	height:304px;
+	background: url(/assets/tape.jpg);
+}
+
+#ie-play {
+	color:#333;
+	font-size:15px;
+	padding-top:190px;
+}
+
+#ie-play a {
+	color:#333;
+}
