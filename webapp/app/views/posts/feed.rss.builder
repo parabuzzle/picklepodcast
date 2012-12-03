@@ -2,6 +2,7 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
     xml.title @title
+    xml.image "http://electricpicklepodcast.com/assets/pickle.jpg"
     xml.description "Bringing you EDM news, music, and more every Sunday afternoon."
     xml.link "http://www.electricpicklepodcast.com"
     xml.language "en-us"
