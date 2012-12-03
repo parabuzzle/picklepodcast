@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121203123756) do
+ActiveRecord::Schema.define(:version => 20121203130025) do
 
   create_table "posts", :force => true do |t|
     t.string   "title",                        :null => false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20121203123756) do
     t.datetime "updated_at",                   :null => false
     t.string   "pre"
     t.string   "length"
+    t.datetime "pubdate"
   end
 
 end

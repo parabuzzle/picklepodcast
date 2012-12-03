@@ -10,11 +10,11 @@ xml.rss :version => "2.0" do
     for post in @posts
       xml.item do
         xml.title post.title
-        xml.description post.pre
+        xml.description "#{post.pre} tracklist: http://electricpicklepodcast.com/archive/#{post.url}"
         #<enclosure url="http://www.podcastingnews.com/articles/media/Chuck_D_No_Meaning_No_128.mp3" length="640561 " type="audio/mpeg"/>
         xml.enclosure render_rss_enclosure(post)
-        xml.pubDate post.created_at.to_s(:rfc822)
-        xml.link "http://localhost:3000/archive/#{post.url}"
+        xml.pubDate post.pubdate.to_s(:rfc822)
+        xml.link "http://electricpicklepodcast.com/archive/#{post.url}"
       end
     end
   end

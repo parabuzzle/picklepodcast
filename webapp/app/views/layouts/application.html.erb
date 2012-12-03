@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= auto_discovery_link_tag :rss, "/feed.rss" %>
 </head>
 <body>
 	<%if flash[:error]%>
@@ -23,6 +24,8 @@
 			 | <%=link_to("admin", :controller=>:site, :action=>:admin)%>
 			<%end%>
 			<div id="tag">:: a new episode every sunday afternoon ::</div>
+			<br/>
+			<span class="large">subscribe ----&gt; <a href="/feed.rss">RSS</a> | <a href="pcast://electricpicklepodcast.com/feed.rss">iTunes</a> &lt;---- subscribe</span>
 		</div>
 		<div id="main">
 		  <%= yield %>

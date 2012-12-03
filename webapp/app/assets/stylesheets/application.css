@@ -149,3 +149,16 @@ a:hover {
 	margin-top:10px;
 	padding-left:20px;
 }
+.small {
+	font-size:10px;
+}
+
+.large a {
+	padding:5px;
+	background:red;
+}
+
+.large a:hover {
+	color:#333;
+	background:#fff;
+}

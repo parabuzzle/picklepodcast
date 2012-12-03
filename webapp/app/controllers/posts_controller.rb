@@ -23,11 +23,13 @@ class PostsController < ApplicationController
 
     # this will be our Feed's update timestamp
     #@updated = @news_items.first.updated_at unless @news_items.empty?
-
     respond_to do |format|
-      format.html { redirect_to format.rss}
-      format.rss { render :layout => false } #index.rss.builder
-    end
+        format.html {redirect_to feed_path(:format => :rss)}
+        format.rss {render :layout => false } #index.rss.builder
+        #pcast://feeds.feedburner.com/rubyonrails_mp4
+        # we want the RSS feed to redirect permanently to the ATOM feed
+        #format.atom { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+      end
   end
   
   
@@ -104,6 +106,7 @@ class PostsController < ApplicationController
   def make_live
     @post = Post.find(params[:id])
     @post.draft = false
+    @post.pubdate = Time.now
     @post.save
     flash[:error] = "published and live!"
     redirect_to "/"
