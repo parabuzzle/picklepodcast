@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   
-  before_filter :logged_in, :except => [:index, :view]
+  before_filter :logged_in, :except => [:index, :view, :feed]
   
   def index
     @title = "Archive"
