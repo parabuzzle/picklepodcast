@@ -7,6 +7,8 @@
  */
 
 (function(window) {
+	
+/*var mp3_url = "";*/
 
 var caughtError = false;
 
@@ -1139,7 +1141,8 @@ function init() {
 
     s = soundManager.createSound({
       id: 'tapeSound',
-      url: 'http://download.electricpicklepodcast.com/epp_episode1.mp3',
+      /*url: 'http://download.electricpicklepodcast.com/epp_episode1.mp3',*/
+	  url: mp3_url,
       multiShot: false,
       whileplaying: function() {
         for (var i=tapeUIs.length; i--;) {

@@ -139,3 +139,13 @@ a:hover {
 #ie-play a {
 	color:#333;
 }
+
+.post {
+	padding:10px;
+	margin-bottom:20px;
+	border-bottom: 2px solid #fff;
+}
+.admin-links{
+	margin-top:10px;
+	padding-left:20px;
+}

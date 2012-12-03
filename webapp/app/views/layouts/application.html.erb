@@ -15,10 +15,10 @@
 	<div id="container">
 		<div id="logo"><%=image_tag('topline.jpg')%></div>
 		<div id="links">
-			<!-- <%=link_to("LATEST EPISODE", "/")%> |
+			<%=link_to("LATEST EPISODE", "/")%> |
 			<%=link_to("ABOUT THE SHOW", :controller=>:site, :action=>:about_the_show)%> | 
-			<%=link_to("ABOUT THE HOSTS", :controller=>:site, :action=>:about_the_hosts)%> | 
-			<%=link_to("PAST EPISODES", "/archive")%> -->
+			<!-- <%=link_to("ABOUT THE HOSTS", :controller=>:site, :action=>:about_the_hosts)%> | -->
+			<%=link_to("PAST EPISODES", "/archive")%>
 			<%if logged_in?%>
 			 | <%=link_to("admin", :controller=>:site, :action=>:admin)%>
 			<%end%>

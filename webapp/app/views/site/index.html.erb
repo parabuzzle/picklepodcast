@@ -1,9 +1,8 @@
-<!--<h1><%=@post.title%></h1>
-<%=newlines(@post.body).html_safe%> -->
-
-<h1>Episode #1 - 12/02/12</h1>
-In the debut episode of The Electric Pickle Podcast we have Trap, Electro, Dubstep, EDM news, the Beatport Top5, and a Hippo sprays shit all over.<br/>
-<br/>
+<h1><%=@post.title%></h1>
+<div class="pretext">
+<%=@post.pre%>
+<br/><br/><br/>
+</div>
 
 <div class="center">
 	<%unless browser.ie?%>
@@ -48,7 +47,7 @@ In the debut episode of The Electric Pickle Podcast we have Trap, Electro, Dubst
 	    <div class="n8"></div>
 	    <div class="n9"></div>
 	   </div>
-	   <div class="label">EPP - Episode #1</div>
+	   <div class="label">EPP - <%=@post.title%></div>
 		(click to play)
 	   <div class="controls">
 	    <div class="bd">
@@ -61,41 +60,22 @@ In the debut episode of The Electric Pickle Podcast we have Trap, Electro, Dubst
 	    </div>
 	   </div>
 	</div>
+	<script>
+    	var mp3_url="<%=@post.mp3%>"
+	</script>
 	<%else%>
 	<!-- lame-o player for IE People -->
 	<div id="ie-tape">
 		<div id="ie-play">
-			<a href="http://download.electricpicklepodcast.com/epp_episode1.mp3" type="audio/mpeg">EPP - Episode #1</a><br/><span class="small">(click to play)</span>
+			<a href="<%=@post.mp3%>" type="audio/mpeg">EPP - <%=@post.title%></a><br/><span class="small">(click to play)</span>
 		</div>
 	</div>
 	<%end%>
-	<br/>
-	Download: <a href="http://download.electricpicklepodcast.com/epp_episode1.mp3">http://download.electricpicklepodcast.com/epp_episode1.mp3</a>
-
+<br/>
+Download: <%=link_to(@post.mp3, @post.mp3)%>
+<br/><br/>
 </div>
 
-<br/>
-Thanks for Listening! Catch us next week, we are going to feature a lot of music from SF Bay Area locals on next week's show.<br/>
-<br/>
-Track List:
-<ul>
-	<li>Skrillex - Imma Try it Out (feat. Alvin Risk)</li>
-	<li>Diplo - Express Yourself (Gent and Jawns Remix)</li>
-	<li>Flostradamas - Drak Knight (Original Mix)</li>
-	<li>Zedd - Clarity (feat. Foxes) (Aylen Remix)</li>
-	<li>Red Hot Chili Peppers - Californication (Xristo Remix)</li>
-	<li>Mike Ramirez - Impact (Incognent Remix)</li>
-	<li>Ross'FM - Rage Mode (Original Mix)</li>
-	<li>Wax Motif/Neoteric - We Go Deep (Torro Torro Remix)</li>
-	<li>Seven Lions - Days to Come (Mike Heymans Remix)</li>
-</ul>
-<br/>
-Beatport Top 5:
-<ol>
-	<li>Hardwell/Amba Shepard - Apollo (feat. Amba Shepard)</li>
-	<li>Nicky Romero/Nervo - Like Home (Original Mix)</li>
-	<li>TJR - Ode to Oi (Original Mix)</li>
-	<li>Bingo Players - Out of My Mind (Original Mix)</li>
-	<li>Dennis Ferrer/Nick Curly - Underground (Dennis Ferrer Remix)</li>
-</ol>
-Special Thanks to DJ Oktivv. His track "Mary, Lucy, Molly" is the backing track for the EDM news segment. Watch for that track to be featured next week ;)
+<div class="main_body">
+<%=@post.body.html_safe%>
+</div>

@@ -4,7 +4,7 @@ class SiteController < ApplicationController
   
   def index
     @title = "Your Everything EDM Podcast"
-    @post = Post.last
+    @post = Post.last(:conditions => { :draft => false })
   end
   
   def about_the_show
@@ -40,6 +40,7 @@ class SiteController < ApplicationController
   
   def admin
     @title = "Admin Dashboard"
+    @posts = Post.all(:conditions => { :draft => true })
   end
   
 end

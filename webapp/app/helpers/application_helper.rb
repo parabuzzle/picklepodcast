@@ -8,6 +8,7 @@ module ApplicationHelper
   end
   
   def newlines(string)
+    return string
     return string.gsub("\n","<br/>")
   end
   

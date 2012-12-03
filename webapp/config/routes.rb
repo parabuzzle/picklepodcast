@@ -22,6 +22,8 @@ Webapp::Application.routes.draw do
   match 'podlogin' => 'site#login'
   match 'logout' => 'site#logout'
   match 'admin' => 'site#admin'
+  match 'posts/:id/make_live' => 'posts#make_live'
+  match 'feed' => 'posts#feed'
   
   resources :posts
   # Sample resource route with options:

@@ -2,3 +2,12 @@
 <%=link_to("logout", :controller=>:site, :action=>:logout)%>
 <br/><br/>
 <%=link_to("NEW POST", :controller=>:posts, :action=>:new)%>
+
+<br/>
+<br/>
+<h2>Unpublished Posts:</h2>
+<ul>
+<%for post in @posts do%>
+	<li><h3><%=link_to post.title, :controller=>:posts, :action=>:show, :id=>post.id%></h3></li>
+<%end%>
+</ul>

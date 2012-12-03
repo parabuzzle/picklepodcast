@@ -6,14 +6,31 @@ class PostsController < ApplicationController
   
   def index
     @title = "Archive"
-    @posts = Post.all.reverse
+    @posts = Post.all(:conditions => { :draft => false }).reverse
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @posts }
     end
   end
+  
+  def feed
+    # this will be the name of the feed displayed on the feed reader
+    @title = "The Electric Pickle Podcast"
 
+    # the news items
+    @posts = Post.all(:conditions => { :draft => false},:order=>"updated_at desc" )
+
+    # this will be our Feed's update timestamp
+    #@updated = @news_items.first.updated_at unless @news_items.empty?
+
+    respond_to do |format|
+      format.html { redirect_to format.rss}
+      format.rss { render :layout => false } #index.rss.builder
+    end
+  end
+  
+  
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -82,6 +99,15 @@ class PostsController < ApplicationController
         format.json { render :json => @post.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+  def make_live
+    @post = Post.find(params[:id])
+    @post.draft = false
+    @post.save
+    flash[:error] = "published and live!"
+    redirect_to "/"
+    return
   end
 
   # DELETE /posts/1
