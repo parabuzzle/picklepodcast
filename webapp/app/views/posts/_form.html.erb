@@ -33,12 +33,16 @@
 			<td>mp3 url:</td>
 			<td><%=f.text_field(:mp3)%></td>
 		<tr>
-			<td>length:</td>
+			<td>File length:</td>
 			<td><%=f.text_field(:length)%></td>
 		</tr>
 		<tr>
-			<td>Status</td>
-			<td>dropdown</td>
+			<td>Duration:</td>
+			<td><%=f.text_field(:duration)%></td>
+		</tr>
+		<tr>
+			<td>Draft?</td>
+			<td><%=f.check_box(:draft)%></td>
 		<tr>
     		<td colspan=2><%= f.submit %></td>
 		</tr>

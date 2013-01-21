@@ -162,3 +162,7 @@ a:hover {
 	color:#333;
 	background:#fff;
 }
+
+.post-body {
+	padding:10px;
+}
