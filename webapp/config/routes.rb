@@ -24,6 +24,7 @@ Webapp::Application.routes.draw do
   match 'admin' => 'site#admin'
   match 'posts/:id/make_live' => 'posts#make_live'
   match 'feed' => 'posts#feed'
+  match 'latest' => 'site#latest'
   
   resources :posts
   # Sample resource route with options:

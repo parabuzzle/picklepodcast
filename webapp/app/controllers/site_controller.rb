@@ -43,4 +43,12 @@ class SiteController < ApplicationController
     @posts = Post.all(:conditions => { :draft => true })
   end
   
+  def latest
+    @post = Post.last(:conditions => { :draft => false })
+    respond_to do |format|
+       format.html {redirect_to :action=>:index; return;}
+       format.json { render :json => @post }
+     end
+   end
+  
 end
