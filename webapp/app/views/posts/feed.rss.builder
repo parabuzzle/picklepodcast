@@ -2,6 +2,7 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0", "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd" do
   xml.channel do
     xml.title @title
+    xml.image "http://electricpicklepodcast.com/assets/itunesimage-small.jpg"
     xml.description "Every Sunday afternoon, Mike Heymans and Eesa bring you the latest in the EDM scene. We dive in to what's new, and what's up and coming and we aren't afraid to tell you our opinion, good or bad."
     xml.link "http://www.electricpicklepodcast.com"
     xml.language "en-us"
