@@ -23,9 +23,12 @@
 			<%if logged_in?%>
 			 | <%=link_to("admin", :controller=>:site, :action=>:admin)%>
 			<%end%>
+			<br/><br/>
+			<%=link_to(image_tag('subscribe-wide.png',:width=>200), "http://itunes.apple.com/us/podcast/the-electric-pickle-podcast/id595373877")%> <%=link_to(image_tag('rss-wide.png',:width=>200), "/feed.rss")%>
 			<div id="tag">:: a new episode every sunday afternoon ::</div>
-			<br/>
-			<span class="large">subscribe ----&gt; <a href="/feed.rss">RSS</a> | <a href="pcast://electricpicklepodcast.com/feed.rss">iTunes</a> &lt;---- subscribe</span>
+		</div>
+		<div class="pad10">
+			<div class="border"></div>
 		</div>
 		<div id="main">
 		  <%= yield %>
