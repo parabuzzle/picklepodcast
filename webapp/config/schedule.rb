@@ -21,5 +21,5 @@
 
 
 every '* * * * *' do
-  runner "publish_queued_posts"
+  runner "runners/publish_queued_posts.rb"
 end
