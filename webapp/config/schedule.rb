@@ -20,6 +20,7 @@
 # Learn more: http://github.com/javan/whenever
 
 
-every '* * * * *' do
+every :sunday, :at => '11pm' do
+  #11pm UTC is 3pm PST :)
   runner "runners/publish_queued_posts.rb"
 end
