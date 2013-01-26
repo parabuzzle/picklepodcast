@@ -1025,7 +1025,7 @@ function ControlHandler(tapeUIDOM, soundObject) {
   var css, dom, events, eventMap, soundOK;
 
   // percentage to jump with each click of the rewind / fast-forward buttons
-  var rewind_ffwd_offset = 0.033;
+  var rewind_ffwd_offset = 0.01;
 
   dom = {
     oControls: null,
