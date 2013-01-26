@@ -10,20 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121153142) do
+ActiveRecord::Schema.define(:version => 20130126014823) do
 
   create_table "posts", :force => true do |t|
-    t.string   "title",                        :null => false
-    t.string   "url",                          :null => false
+    t.string   "title",                         :null => false
+    t.string   "url",                           :null => false
     t.text     "body"
     t.string   "mp3"
     t.boolean  "draft",      :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "pre"
     t.string   "length"
     t.datetime "pubdate"
     t.string   "duration"
+    t.boolean  "queued",     :default => false
   end
 
 end
