@@ -11,7 +11,7 @@ xml.rss :version => "2.0", "xmlns:itunes" => "http://www.itunes.com/dtds/podcast
     xml.itunes(:author, "Mike Heymans and Eesa")
     xml.itunes(:summary, "Every Sunday afternoon, Mike Heymans and Eesa bring you the latest in the EDM scene. We dive in to what's new, and what's up and coming and we aren't afraid to tell you our opinion, good or bad.")
     xml.itunes(:owner, "mikeheymansmusic@gmail.com")
-    xml.itunes(:image, "http://s3.amazonaws.com/picklepodcast/itunesimage.png")
+    xml.itunes(:image, "http://s3.amazonaws.com/picklepodcast/albumart1.jpg")
     xml.itunes(:explicit, "yes")
     xml.itunes(:category, "Music")
     keywords="EDM, Dance, Music, News, Funny, Opinion, House, Electro, Dubstep, Trap, Trance, Drumstep, DnB, Eesa, Heymans"
