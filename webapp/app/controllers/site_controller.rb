@@ -1,20 +1,20 @@
 class SiteController < ApplicationController
-  
+
   before_filter :logged_in, :only=>:admin
-  
+
   def index
     @title = "Your Everything EDM Podcast"
-    @post = Post.last(:conditions => { :draft => false })
+    #@post = Post.last(:conditions => { :draft => false })
   end
-  
+
   def about_the_show
     @title = "About the Show"
   end
-  
+
   def about_the_hosts
     @title = "About the Hosts"
   end
-  
+
   def login
     @title = "login"
     if request.post?
@@ -29,7 +29,7 @@ class SiteController < ApplicationController
       end
     end
   end
-  
+
   def logout
     @title = "logout"
     cookies[:token]=nil
@@ -37,12 +37,12 @@ class SiteController < ApplicationController
     redirect_to "/"
     return
   end
-  
+
   def admin
     @title = "Admin Dashboard"
     @posts = Post.all(:conditions => { :draft => true })
   end
-  
+
   def latest
     @post = Post.last(:conditions => { :draft => false })
     respond_to do |format|
@@ -50,5 +50,5 @@ class SiteController < ApplicationController
        format.json { render :json => @post }
      end
    end
-  
+
 end

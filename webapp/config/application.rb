@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'secrets.rb' #load keys and passwords
+require './secrets.rb' #load keys and passwords
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
